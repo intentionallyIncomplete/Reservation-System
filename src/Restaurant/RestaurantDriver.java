@@ -57,6 +57,4 @@ public class RestaurantDriver {
 		manager.sortReservations();
 		System.out.println(manager);
 	}
-	
-
 }
