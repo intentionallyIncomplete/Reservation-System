@@ -13,21 +13,52 @@ package ReservationSystem;
  * </p>
  * 
  * */
-public abstract class ReservableItem {
+abstract class ReservableItem extends Reservation{
 	
 	/*Class variables*/
-	
+	private final int TOTAL_RESERVATIONS_PER_TABLE = 10;
+	private String nameID;
+	Reservation[] listOfReservedTables = new Reservation[TOTAL_RESERVATIONS_PER_TABLE];
 	
 	/*Class methods*/
 	
 	/*
 	 * <h4>Description:</h4>
-	 * <p>
-	 * Simple getter for returning the name of the party who 
-	 * is requesting or requested (successfully) the reservation.
+	 * <p>abstract getter method for returning the name of the party
+	 * who booked the reservation.
 	 * </p>
 	 * */
-	public String getID() {
-		return 
+	public String getId() {
+		return nameID;
 	}
+	
+	/*
+	 * <h4>Description:</h4>
+	 * <p>Abstract method for getting the level of fitness
+	 * for a reservation request.
+	 * </p>
+	 * 
+	 * */
+//	public abstract int getFitnessValue(Reservation res) {
+//		
+//	}
+	
+	/*
+	 * <h4>Description</h4>
+	 * <p>This is an abstract method that will take in an object
+	 * of the Scanner class after it has been separated by the split method.
+	 * </p>
+	 * 
+	 * */
+	private void addTable(Table aTable) {
+		for(int i=0;i<TOTAL_RESERVATIONS_PER_TABLE;i++) {
+			listOfReservedTables[i] = 
+		}
+	}
+	
+	/*
+	 * 
+	 * 
+	 * */
+	
 }

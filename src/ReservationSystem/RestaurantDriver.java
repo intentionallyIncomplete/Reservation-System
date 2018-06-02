@@ -30,7 +30,7 @@ public class RestaurantDriver {
 				 * scanner object used in calling of Table constructor --> Table object is built -->
 				 * addReservable method is executed.
 				 * */
-				manager.addReservable(new Table(scanner)); 				
+				manager.addReservable(new Table(scanner));
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("file not found");
