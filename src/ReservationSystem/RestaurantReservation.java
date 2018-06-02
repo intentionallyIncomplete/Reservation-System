@@ -1,5 +1,5 @@
 package ReservationSystem;
 
-public class RestaurantReservation {
+public class RestaurantReservation extends Reservation{
 
 }

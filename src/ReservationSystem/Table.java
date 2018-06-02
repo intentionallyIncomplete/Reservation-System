@@ -1,5 +1,5 @@
 package ReservationSystem;
 
-public class Table {
+public class Table extends ReservableItem{
 
 }
