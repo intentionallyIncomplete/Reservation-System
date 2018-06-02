@@ -1,4 +1,4 @@
-//package ReservationSystem;
+package ReservationSystem;
 /*
  * Reservation System homework
  * CSS143
