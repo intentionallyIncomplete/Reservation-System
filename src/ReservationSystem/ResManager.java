@@ -9,12 +9,12 @@ package ReservationSystem;
 public class ResManager<ItemType, ResType> {
 
 	
-	public void addReservable(Table tableToReserve) {
+	public void addReservable(ReservableItem resItem) {
 		
 		
 	}
 	
-	public void makeReservation() {
+	public Reservation makeReservation(Reservation trialRes) {
 		
 	}
 }

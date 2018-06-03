@@ -18,38 +18,51 @@ import java.util.Scanner;
 public class Table extends ReservableItem{
 
 	/*Class variables*/
-	private int numberOfSeatsAvailable;
-	private String nameOfPartyOnReservation;
-	private String[] splitText = new String[2];
+	//private int numberOfSeatsAvailable;
+	//private String nameOfPartyOnReservation;
+	private String newLine;
 
 	/*
 	 * <p>This is the "default" constructor that takes in a line from the tableFile document.
-	 * The necessary information is extracted from the line and assigned to
-	 * a class variable for the number of seats available per table and the name of the party 
-	 * who booked it.
+	 * The line is split and each part of the line is assigned to a value in the String
+	 * array that's created and used only when a Table is created.
 	 * </p>
 	 * 
 	 * @param Scanner inFile --> a line from the data file
 	 * */
 	public Table(Scanner inFile) {
-		//System.out.println(inFile.nextLine() + "\n--New Line--");
+		this.newLine = inFile.nextLine();
+		/* Split the line and parse the new array to two elements.
+		 * The first element is the String for the name
+		 * and the other is the seat capacity for
+		 * each table found in the file.
+		 * */
+		String[] splitLine = newLine.trim().split("\\s+");
+		//this.nameOfPartyOnReservation = splitLine[0];
+		//this.numberOfSeatsAvailable = Integer.parseInt(splitLine[1]);
+		nameID = splitLine[0];
+		numSeatsAvailable = Integer.parseInt(splitLine[1]);
 		
+		/* <p>Uncomment for debugging. 
+		 * Simply checks that the line was split properly and 
+		 * values are assigned to the right variable.</p>
+		 * */
+//		System.out.println("ID: " + nameOfPartyOnReservation);
+//		System.out.println("Number of Seats Available: " + numberOfSeatsAvailable);
 		
 	}
 
 	/*
-	 * <h4>Description</h4>
+	 * <h4>Method Description:</h4>
 	 * <p>
 	 * This is a simple getter for the number of seats available. 
 	 * </p>
 	 * */
-	public int getNumberOfSeatsAvailable() {
-		return numberOfSeatsAvailable;
+	public int getNumSeats() {
+		return numSeatsAvailable;
 	}
-
-	@Override
-	void addTable(String tableCapacity) {
-		// TODO Auto-generated method stub
-		
+	
+	public String getId() {
+		return nameID;
 	}
 }

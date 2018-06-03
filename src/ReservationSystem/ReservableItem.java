@@ -1,5 +1,6 @@
 package ReservationSystem;
 
+import java.util.ArrayList;
 
 /*
  * <h4>Class Description:</h4>
@@ -13,15 +14,16 @@ package ReservationSystem;
  * </p>
  * 
  * */
-abstract class ReservableItem extends Reservation{
-	
+public class ReservableItem extends Reservation{
+
 	/*Class variables*/
 	private final int TOTAL_RESERVATIONS_PER_TABLE = 10;
-	private String nameID;
-	Reservation[] listOfReservedTables = new Reservation[TOTAL_RESERVATIONS_PER_TABLE];
-	
+	public String nameID;
+	public int numSeatsAvailable;
+	ArrayList<Reservation> reservableItems = new ArrayList<Reservation>(10);
+
 	/*Class methods*/
-	
+
 	/*
 	 * <h4>Description:</h4>
 	 * <p>abstract getter method for returning the name of the party
@@ -31,34 +33,35 @@ abstract class ReservableItem extends Reservation{
 	public String getId() {
 		return nameID;
 	}
-	
+
 	/*
-	 * <h4>Description:</h4>
-	 * <p>Abstract method for getting the level of fitness
-	 * for a reservation request.
+	 * <h4>Method Description:</h4>
+	 * <p>
+	 * 
+	 * </p>
+	 * */
+	public int getNumSeats() {
+		return numSeatsAvailable;
+	}
+
+	/*
+	 * <h4>Method Description:</h4>
+	 * <p>
+	 * 
 	 * </p>
 	 * 
 	 * */
-//	public abstract int getFitnessValue(Reservation res) {
-//		
-//	}
-	
-	/*
-	 * <h4>Description</h4>
-	 * <p>This is an abstract method that will take in an object
-	 * of the Scanner class after it has been separated by the split method.
-	 * </p>
-	 * 
-	 * */
-	private void addTable(Table aTable) {
-		for(int i=0;i<TOTAL_RESERVATIONS_PER_TABLE;i++) {
-			listOfReservedTables[i] = 
-		}
+	public ArrayList<Reservation> getReservation() {
+		return reservableItems;
 	}
 	
 	/*
 	 * 
-	 * 
 	 * */
-	
+	public void makeListOfTables(Table aTable) {
+		for(int i=0;i<reservableItems.size();i++) {
+			reservableItems.add(aTable);
+			System.out.println(aTable.toString() + "|| added to list");
+		}
+	}
 }

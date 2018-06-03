@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class RestaurantDriver {
 
 	public static void main(String[] args) {
-		ResManager<Table, Reservation> manager = new ResManager<Table, Reservation>(); //create new list object
+		ResManager<Table, Reservation> manager = new ResManager<Table, Reservation>(); //create new manageable lists
 		try {
 
 			Scanner scanner = new Scanner(new FileInputStream("tableFile.txt")); //open file
@@ -31,12 +31,16 @@ public class RestaurantDriver {
 				 * addReservable method is executed.
 				 * */
 				manager.addReservable(new Table(scanner));
+//				Table testTable = new Table(scanner);
+//				System.out.println("ID: " + testTable.getId() + "|| capacity: " + testTable.getNumSeats());
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("file not found");
 			System.exit(0);
 		}
 		//manager.printItems();  // debugging code, prints list of Tables
+		
+		
 		
 //		RestaurantReservation r1 = new RestaurantReservation(2, 3, "Chen family");
 //		manager.makeReservation(r1);
